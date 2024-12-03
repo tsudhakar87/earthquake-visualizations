@@ -56,7 +56,7 @@ def main():
     how="left")
     # print(merged2)
     # print(count_na(merged2))
-    new_merged = remove_high_na_columns(merged2, threshold=2500)
+    new_merged = remove_high_na_columns(merged2, threshold=3500)
     # print(new_merged)
     new_merged = new_merged.drop(columns=['Entity_x','Entity_y', 'Code_y'])
     new_merged = new_merged.rename(columns={
@@ -65,7 +65,7 @@ def main():
     'Code_x':'Country Code'
     })
     print(new_merged)
-    new_merged.to_csv('earthquake_merged.csv')
+    new_merged.to_csv('earthquake_merged2.csv')
     # pop_df= read_files(population_data)
     # print(pop_df)why
     # pop_meta_df= read_files(population_metadata)
