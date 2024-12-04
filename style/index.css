@@ -4,7 +4,7 @@ ul {
     padding: 0;
   }
 
-h1, h2, h3, ul, p, nav {
+h1, h2, h3, ul, p, nav, a {
   font-family: Helvetica, sans-serif, Georgia, Times, 'Times New Roman', serif;
   padding: 5px;
   text-align: center;
@@ -19,7 +19,9 @@ nav {
   font-size: large;
   margin-right: 20px;
   text-shadow: 2px;
-  padding-top: 50px;
+  background-color: lightblue;
+  background-size: 10px;
+  
 }
 
 .navbar a { 
@@ -29,8 +31,26 @@ nav {
 } 
 
 p {
+  width: fit-content;
+  margin: auto;
+}
+
+.intro {
+  width: 500px;
+}
+
+.intro p, a {
   width: 500px;
   text-align: center;
+}
+
+.scaleA {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: max-content;
 }
 
     
