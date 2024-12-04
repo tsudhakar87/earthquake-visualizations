@@ -44,6 +44,11 @@ p {
   text-align: center;
 }
 
+.caption {
+  width: 750px;
+  text-align: center;
+}
+
 .scaleA {
   width: 50%;
   height: 50%;
@@ -53,4 +58,14 @@ p {
   max-width: max-content;
 }
 
-    
+iframe {
+  margin: 0 auto;
+  display:block
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
