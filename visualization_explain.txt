@@ -1,0 +1,47 @@
+Treemap:
+“Global Earthquake Counts and Economic Damages by Country (2000–2024)” 
+
+This treemap highlights global earthquake counts and economic damages from 2000 to 2024, adjusted 
+to 2024 dollar values using the formula: Adjusted Damage = Total Damage × (Current CPI / Event Year 
+CPI). This adjustment standardizes economic impacts across years, accounting for inflation using the 
+U.S. Bureau of Labor Statistics CPI. The dataset originally included 109 countries, but only 47 had 
+complete economic damage data, making this visualization representative of those countries. Economic 
+damages encompass both direct and indirect costs, such as infrastructure repairs, agricultural losses, 
+healthcare expenses, and road reconstruction.
+
+The treemap effectively uses marks (rectangular areas) to represent countries and channels to encode 
+earthquake counts (box size) and economic damages (color intensity). A logarithmic scale was applied to 
+the color axis to address the data skew caused by Japan’s $449B in damages, which would otherwise dominate 
+the visualization. The "reds" color palette intuitively conveys the severity of damages, as red is 
+universally associated with danger and negative impact. Users can hover over boxes to access detailed 
+metrics, including exact economic damages, earthquake counts, average magnitude, focal depth, and tsunami 
+occurrences, or click on specific countries for focused exploration. By illustrating the interplay between 
+frequency, magnitude, and economic vulnerability, this treemap reveals global trends. For example, Japan’s 
+high costs are driven by frequent high-magnitude events and significant infrastructure damage, while smaller 
+nations like Haiti demonstrate how even a few earthquakes can lead to devastating localized impacts. This 
+visualization emphasizes the critical need for tailored disaster preparedness strategies and highlights the 
+disproportionate economic burdens faced by smaller, less resilient nations.
+
+
+Stacked bar chart:
+"Earthquake Economic Damage in <GIVEN COUNTRY> Compared to Global Totals by Year"
+
+This stacked bar chart visualizes earthquake damages by country from 2000 to 2024, adjusted to 2024 dollar values. 
+Marks used are bars: gray bars represent total global damages per year, while red bars highlight the selected 
+country's damages. Channels include color to differentiate the selected country (red) from total damages (gray) 
+and bar size to encode economic losses. Hovering over gray bars reveals total economic damage and earthquake count 
+for the year, while hovering over the selected country's bars provides detailed statistics: economic damage, earthquake 
+count, average magnitude, focal depth, and tsunami occurrences.
+
+The chart highlights how specific countries, particularly Japan, dominate earthquake-related damages. Japan’s prominence 
+stems from the 2011 Great East Japan Earthquake, which caused over $300 billion in damages, a tsunami, and the Fukushima 
+nuclear disaster, making it the costliest natural disaster in history (Daniell, James, 2011). Other major events include 
+the 2008 Sichuan earthquake in China, which devastated rural areas with inadequate seismic infrastructure. Users can 
+select countries to compare their damages to global totals, providing insights into which countries were most affected 
+each year.
+
+The chart reveals that while economic damages show a general downward trend, this may not necessarily reflect fewer 
+earthquake events but rather improved infrastructure resilience. The recurring activity in Japan aligns with its position 
+on the Ring of Fire, where four tectonic plates converge. The visualization offers a focused view compared to the 
+global treemap, emphasizing both major disasters like Japan's 2011 earthquake and localized impacts, such as Haiti's 
+events, which highlight disparities in vulnerability and resilience globally.
