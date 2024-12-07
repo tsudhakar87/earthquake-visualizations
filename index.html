@@ -6,20 +6,103 @@
     <title>Earthquake Visualizations</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<nav class = "navbar">
-    <a href="index.html">Home</a>
-    <a href="introduction.html">Introduction</a>
-    <a href="datasets.html">Our Datasets</a>
-    <a href="references.html">References</a>
-    <a href="static_viz.html">Static Visualizations</a>
-    <a href="interactive_viz.html">Interactive Visualizations</a>
-    <a href="summary.html">Findings & Next Steps</a>
-</nav>
 <body>
     <h1>Earthquake Data Visualized: </h1>
     <p>Final project for DS4200: Information Presentation and Data Visualization at Northeastern. </p>
     <p>Fall 2024 Semester</p>
     <br>
     <p>Group members: Dylan Han, Laura Boelsterli, Thillainayaki Sudhakar</p>
+
+    <h1>Introduction</h1>
+    <p class="intro">For our project, we focused on visualizing and analyzing global earthquake data, highlighting one of nature’s most destructive phenomena. 
+        Earthquakes are a critical area of study because they can devastate communities, leading to significant loss of life, widespread destruction of 
+        infrastructure, and triggering secondary disasters like tsunamis, volcanic eruptions, and landslides. Some of history's deadliest natural disasters — such
+         as the 2010 Haiti earthquake, the 2004 Indian Ocean earthquake and tsunami, and the 2008 Sichuan earthquake in China — underscore the catastrophic impact 
+         these events can have, often leaving long-lasting scars on affected regions.</p>
+
+    <p class="intro">
+        Through the analysis of earthquake data, we aim to identify patterns and trends that can reveal which areas of the world are most affected or at the greatest 
+        risk of future events. By better understanding these high-risk zones, we hope to contribute to developing more effective strategies for disaster preparedness 
+        and mitigation. This kind of analysis not only sheds light on the vulnerabilities of specific regions but also highlights the importance of using data-driven 
+        insights to address one of the world’s most challenging natural threats. </p>
+
+    
+    <img src="https://media.npr.org/assets/img/2020/01/09/gilkey-haiti-0-13_custom-46ab048500e8152fb90640abd29855c695bea32f.jpg" 
+        alt="Destroyed building with construction worker" class="scaleA" class = "center">
+
+    <h1>Datasets</h1>
+    <p class = "intro">We used the National Centers for Environmental Information’s (NCEI)<a href="https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-data " class = "intro">hazardous earthquake dataset,</a>hosted by the National Oceanic and Atmospheric Administration (NOAA). This dataset is pretty extensive, with 6,442 entries documenting earthquakes from over 2,000 years ago to the present. Each earthquake is recorded with 39 different details, categorical and continuous, including the exact timing (down to the second), location (latitude and longitude), magnitude, and the impact in terms of deaths, missing persons, injuries, and economic damages. Given the size of this data, after cleaning and filtering the data to fit the 5000 observations and 30 attributes requirement, we were able to analyze when earthquakes happen, how severe they’ve been, and the damage they’ve caused. 
+        For our project, we initially focused on earthquakes that happened after 1900 to keep things manageable and work with more complete data, then narrowed it down to post 2000s. 
+        We cleaned up the dataset to remove entries with too many missing values and dropping columns that aren’t relevant to what we’re analyzing. 
+        Additionally, we converted the total cost of damage to current monetary value with the consumer price index (CPI).
+        There were a lot of null values wehad to clean up and filter out columns that were too large (over 3500). We counted null values in the visualization where necessary and renamed the country names into a standardized format as sometimes the regions were mentioned rather than the country.
+        We also chose this as our data set since it comes from the NCEI, which is part of NOAA, a top authority on environmental data. NCEI has a strong reputation for thorough data collection and validation, so we know the information we’re working with is accurate and reliable. 
+    </p>
+    <br>
+
+    <h1>References</h1>
+    <p>Impact of earthquakes on public health</p>
+    <p>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9968131/</p>
+    <p>Global review of human-induced earthquakes</p>
+    <p>https://www.sciencedirect.com/science/article/pii/S001282521730003X</p>
+
+    <h1>Analysis of All Earthquakes</h1>
+    <h2>Density Plot</h2>
+    <img src="/NEW_static_density.png" style="margin-left:30%; margin-right:25%">
+    <p class = "intro">
+        The graph above represents density plot of the distribution of earthquake magnitudes, which we used to explore the severity of earthquakes. The graph shows that earthquake magnitudes have a slightly bimodal distribution, with peaks around 6.0 and 8.0. In addition, the distribution is relatively narrow, with very little earthquakes being exceptionally low or high in magnitude, so we can deduce that the kurtosis is quite high. Finally, there are vertical lines show where certain magnitudes are and the potential damage they can cause. They are color coded based on the level of magnitude.
+    </p>
+    <h2>Deaths Caused By Earthquakes By Country</h2>
+    <script src='https://d3js.org/d3.v7.min.js'></script>
+    <script src='/main.js'></script>
+    <p class = "intro">This is a bar chart showing the top ten countries by earthquake deaths. As we can see, China has the most deaths by earthquakes by a wide margin with 651,699. Haiti is second in earthquake deaths, though most of these deaths are due to the deadly 2010 earthquake, suggesting that other earthquakes in Haiti are much less dangerous. Furthermore, seven of these countries are in Asia, suggesting that Asia is the most susceptible continent to earthquakes. Overall, this graph is proof of how dangerous earthquakes are,
+        and that they pose a large threat to human safety.</p>
+    <h2>Number of Earthquakes Per Year From 1900</h2>
+    <img src="/NEW_static_time.png">
+    <p class = "intro">This is a time series plot of earthquake existences since 1900. The occurences of earthquakes appear to be cyclical from 1900 to 2000, which makes sense given the earthquake cycle, which is the phenomeon explaining that earthquakes exist on the same faults repeatedly due to the build up of stress. Around 2000, we see a large jump in earthquake occurrences. This is likely due to the fact that technology to record earthquakes has improved, as smaller earthquakes and earthquakes occurring deeper in the Earth can be recorded. 
+        This is a time series plot of earthquake existences since 1900. The occurences of earthquakes appear to be cyclical from 1900 to 2000, which makes sense given the earthquake cycle, which is the phenomeon explaining that earthquakes exist on the same faults repeatedly due to the build up of stress. Around 2000, we see a large jump in earthquake occurrences. This is likely due to the fact that technology to record earthquakes has improved, as smaller earthquakes and earthquakes occurring deeper in the Earth can be recorded. Because of this, we have decided to concentrate our visualizations on this portion of the dataset, since the quality of data is much higher. We have also included arrows to point out when famous earthquakes have occured.
+    </p>
+    <h2>Map of All Earthquakes</h2>
+    <iframe src="/map final.html" width="800" height="600"></iframe>
+    <p class = "caption">
+        This is an interactive plot of every earthquake in the dataset. To interact with the graph, 
+        users can use their cursor to move between countries and areas within the world. The user 
+        can click on the red icons, which represent an occurrence of an earthquake, to show the year 
+        the earthquake occurred, the magnitude of the earthquake, and any recorded deaths. This map 
+        shows us where earthquakes are most prevalent around the world, like the eastern side of Africa, 
+        the Ring of Fire, and southern China.  
+    </p>
+
+    <h1>Analysis of Economic Impact of Earthquakes</h1>
+    <h2>Earthquake Occurrences & Economic Damage</h2>
+    <iframe src="/int_tree_map.html" width="800" height="600" style="text-align:center"></iframe>
+    <p class = "caption">
+        This treemap visualizes global earthquake counts and economic damages (2000–2024), adjusted to 2024 dollar values for inflation using the U.S. Bureau of Labor Statistics CPI. It includes 47 countries with complete damage data, showing both direct and indirect costs like infrastructure repairs and healthcare expenses. Box size represents earthquake counts, while color intensity encodes economic damages, with a logarithmic scale addressing skew from Japan’s $449B in damages. Hovering reveals detailed metrics such as damage amounts, earthquake counts, and average magnitudes. The visualization highlights trends, like Japan’s dominance due to frequent high-magnitude events and the 2011 earthquake, while smaller nations like Haiti demonstrate how localized events can have outsized impacts. This treemap underscores the importance of disaster preparedness and the uneven economic toll of earthquakes worldwide.
+    </p>
+    <h2>Economic Damage Caused By Earthquakes Over Time</h2>
+    <iframe src="/int_bar_chart.html" width="800" height="600"></iframe>
+    <p class = "caption">
+        This stacked bar chart shows global earthquake damages (2000–2024) adjusted to 2024 dollar values, highlighting country-specific impacts. Total global damages are shown in gray, with the selected country's damages in red. Hovering provides details, including economic damages, earthquake counts, average magnitude, focal depth, and tsunami occurrences. Japan stands out due to the 2011 Great East Japan Earthquake, causing $300 billion in damages, a tsunami, and the Fukushima nuclear disaster (Daniell, 2011), making it the costliest natural disaster in history. The chart also emphasizes other major events, like China's 2008 Sichuan earthquake, while revealing global patterns of vulnerability and resilience.
+    </p>
+    
+    <h1>Summary of Findings</h1>
+    <p class = "center">
+        Our analysis reveals significant trends and insights into global earthquake occurrences, fatalities, and economic impacts over the past century. 
+        Time series data highlight a marked increase in recorded earthquake occurrences since 2000, largely attributed to advances in seismic recording 
+        technology. This underscores the importance of focusing on the post-2000 dataset for higher data accuracy. Bar charts and treemaps emphasize 
+        the catastrophic human and economic toll of earthquakes, particularly in countries like China, Indonesia, and Japan. China leads in earthquake 
+        fatalities due to frequent seismic events and large populations near fault zones, while Haiti’s devastating 2010 earthquake highlights the outsized 
+        impact of a single event in vulnerable regions.
+        
+        Economic analyses show that Japan has suffered the greatest financial losses from earthquakes, driven primarily by the 2011 Great East Japan Earthquake, 
+        which caused over $300 billion in damages. Other nations, such as Indonesia and China, also bear significant economic burdens due to their high frequency 
+        of earthquakes. Treemaps reveal global disparities, with high-frequency seismic countries like Indonesia experiencing more frequent but lower-magnitude 
+        earthquakes, while nations like Japan and Chile endure less frequent but more intense events. This disparity highlights the need for region-specific disaster 
+        preparedness and mitigation strategies.
+    </p>
+    <h1>Potential Next Inquiries</h1>
+    <p class = "center">
+        Future research could explore the correlation between urbanization, population density, and earthquake impact severity to better understand how human factors amplify risks. Investigating the effectiveness of seismic-resistant infrastructure in reducing fatalities and economic losses would provide actionable insights for disaster-prone regions. Additionally, studying the impact of earthquake depth and proximity to populated areas on casualties and damages could refine risk assessments and improve early-warning systems. Exploring socio-economic disparities in recovery efforts across different nations may also shed light on the long-term consequences of seismic disasters and guide international support initiatives.
+    </p>
 </body>
 </html>
